@@ -6,15 +6,14 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
   formGroup: FormGroup;
-  router: Router;
   constructor(
     private authService: AuthServiceService,
-    router: Router,
+    private router: Router,
     private toasrt: ToastrService) { }
 
   ngOnInit(){
@@ -29,9 +28,10 @@ export class LoginComponent implements OnInit {
 
   loginProcess(){
     if(this.formGroup.valid){
-      this.authService.login(this.formGroup.value).subscribe(result=>{
+      this.authService.login(this.formGroup.value).subscribe(result =>{
         if(result.success){
           console.log(result.message);
+          // this.router.navigate(['dashboard']);
         } else {
           this.toasrt.error("Credenciais inválidas.")
         }
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  goToPage(pageName:string):void{
-    this.router.navigate([`${pageName}`]);
-  }
+  // goToPage(pageName:string):void{
+  //   this.router.navigate([`${pageName}`]);
+  // }
 }

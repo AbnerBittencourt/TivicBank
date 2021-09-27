@@ -1,0 +1,14 @@
+.main-div mat-toolbar, button {
+  background-color:#01B1EC;
+  color: #fff;
+}
+
+.card img {
+  padding: 25px 0 0 25px;
+  width: 50px;
+  height: 50px;
+}
+
+.card p {
+  padding-left:10px;
+}

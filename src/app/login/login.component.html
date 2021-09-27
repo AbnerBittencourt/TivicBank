@@ -1,0 +1,18 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="18">
+    <mat-toolbar fxLayoutAlign="center center">Faça seu login</mat-toolbar>
+    <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"
+      (ngSubmit)="loginProcess()">
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput placeholder="Digite seu CPF" formControlName="cpf">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Digite sua senha" formControlName="password">
+      </mat-form-field>
+      <button mat-raised-button type="submit" (click)="goToPage('dashboard')">Login</button>
+    </form>
+  </mat-card>
+</div>

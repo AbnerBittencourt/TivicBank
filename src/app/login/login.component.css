@@ -1,0 +1,11 @@
+.main-div mat-card {
+  padding: 0px;
+}
+.login-form {
+  padding: 20px;
+}
+
+.main-div mat-toolbar, button {
+  background-color:#01B1EC;
+  color: #fff;
+}

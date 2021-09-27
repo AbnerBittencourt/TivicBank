@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { Router } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +12,10 @@ export class LoginComponent implements OnInit {
 
   formGroup: FormGroup;
   router: Router;
-  constructor(private authService: AuthServiceService, router: Router) { }
+  constructor(
+    private authService: AuthServiceService,
+    router: Router,
+    private toasrt: ToastrService) { }
 
   ngOnInit(){
     this.initForm();
@@ -29,9 +32,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.formGroup.value).subscribe(result=>{
         if(result.success){
           console.log(result.message);
-          // alert(result.message);
         } else {
-          alert(result.message);
+          this.toasrt.error("Credenciais inválidas.")
         }
       });
     }

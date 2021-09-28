@@ -16,7 +16,7 @@ export class AuthServiceService {
 
   login(data): Observable<any>{
     console.log("I am server, man")
-    return this.http.post(`${baseUrl}/login`, JSON.stringify(data));
+    return this.http.post(`${baseUrl}/login`,data);
   }
 
 }

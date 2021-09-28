@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.formGroup.value).subscribe(result =>{
         if(result.success){
           console.log(result.message);
-          // this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard']);
         } else {
           this.toasrt.error("Credenciais inválidas.")
         }

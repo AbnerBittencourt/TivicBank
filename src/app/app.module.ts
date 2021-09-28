@@ -55,7 +55,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      preventDuplicates: true,
+    }),
     LayoutModule,
     MatSidenavModule,
     MatIconModule,

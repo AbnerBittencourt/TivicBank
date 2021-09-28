@@ -22,8 +22,9 @@
 
 .dashboard-card {
   position: absolute;
+  width: 50%;
   top: 15px;
-  left: 15px;
+  left: 360px;
   right: 15px;
   bottom: 15px;
 }
@@ -39,10 +40,10 @@
 }
 
 .dados {
-  font-size: larger;
+  font-size: 30px;
+  line-height: 1.5;
   font-weight: bold;
 }
-
 
 button a{
   text-decoration:none;

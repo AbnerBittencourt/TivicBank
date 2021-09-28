@@ -1,5 +1,8 @@
-<div fxLayoutAlign="center center" fxFlexFill class="main-div">
-  <mat-card fxFlex="18">
+<div fxLayoutAlign="center center" fxFlexFill class="main-div" fxLayout="column">
+  <div>
+    <img src="../../../assets/images/logo.png">
+  </div>
+  <mat-card fxFlex="30">
     <mat-toolbar fxLayoutAlign="center center">Faça seu login</mat-toolbar>
     <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"
       (ngSubmit)="loginProcess()">

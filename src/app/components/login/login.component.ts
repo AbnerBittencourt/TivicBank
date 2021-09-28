@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['dashboard', response.user.id]);
         },
         () => {
-          this.toastr.error("Credenciais inválidas.")
+          this.toastr.error("Credenciais inválidas.");
         }
       );
     }

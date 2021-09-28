@@ -2,26 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
+## How to run the project
+
+- Clone the repository
+
+```bash
+$ git clone https://github.com/AbnerBittencourt/TivicBank
+```
+
+- Open the project folder and run the following commands
+
+```bash
+$ yarn or npm i
+$ yarn dev or npm run dev
+```
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## Intructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For the front to consume the data, it is necessary to run this API
+<a>https://github.com/AbnerBittencourt/API_Bank
 
-## Build
+The database is a SQLite, the data file is in src/database/database.sqlite. In the database there are two users.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Tivic] :
 
-## Running unit tests
+      CPF: 000.000.000-00
+      Account: 0000
+      Password: 0000
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[Abner] :
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+      CPF: 000.000.000-01
+      Account: 0001
+      Password: 0001

@@ -3,12 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
-
-interface IData{
-  name: string;
-  balance: number;
-}
+import { baseUrl } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -37,9 +33,9 @@ export class MenuComponent {
       })
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private http: HttpClient) {}
+  constructor(private breakpointObserver: BreakpointObserver, private http: HttpClient, private _route: ActivatedRoute) {}
 
-  listDados: IData[];
+  listDados: any = {name: "", balance:0};
 
   ngOnInit() {
     this.getDados().subscribe(
@@ -50,6 +46,7 @@ export class MenuComponent {
   }
 
   getDados(): Observable<any> {
-    return this.http.get("http://localhost:3000/dashboard");
+    let id = this._route.snapshot.params['id'];
+    return this.http.get(`${baseUrl}/dashboard/${id}`);
   }
 }

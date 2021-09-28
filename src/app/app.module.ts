@@ -4,8 +4,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http'
+
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { DepositComponent } from './components/deposit/deposit.component';
+import { WithdrawComponent } from './components/withdraw/withdraw.component';
+
+import { AuthServiceService } from './services/auth-service.service';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,21 +24,21 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthServiceService } from './auth-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MenuComponent,
     DashboardComponent,
+    DepositComponent,
+    WithdrawComponent
   ],
   imports: [
     BrowserModule,

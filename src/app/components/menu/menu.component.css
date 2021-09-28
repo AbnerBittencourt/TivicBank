@@ -37,3 +37,13 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+.dados {
+  font-size: larger;
+  font-weight: bold;
+}
+
+
+button a{
+  text-decoration:none;
+}

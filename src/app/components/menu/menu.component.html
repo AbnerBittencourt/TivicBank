@@ -3,8 +3,7 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="http://localhost:3000/dashboard/withdraw">Saque</a>
-      <a mat-list-item href="http://localhost:3000/dashboard/deposit">Depósito</a>
+      <a mat-list-item href="http://localhost:4200">Sair</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -16,7 +15,6 @@
       <span>TivicBank</span>
     </mat-toolbar>
     <div class="grid-container">
-      <button fxLayoutAlign="right right"><a href="http://localhost:4200/">Sair</a></button>
       <h1 class="mat-h1">Dashboard</h1>
       <mat-grid-list cols="2" rowHeight="350px">
         <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -39,6 +37,44 @@
           </mat-card>
         </mat-grid-tile>
       </mat-grid-list>
+      <div>
+        <div style="width:40%;">
+          <mat-card fxFlex="50">
+            <mat-toolbar>Saque</mat-toolbar>
+            <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"
+              (ngSubmit)="sendWithdraw()">
+              <mat-form-field appearance="fill">
+                <mat-label>Conta</mat-label>
+                <input matInput placeholder="Digite sua conta." formControlName="account">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Digite o valor a ser sacado" formControlName="balance">
+              </mat-form-field>
+              <button mat-raised-button type="submit">Sacar</button>
+            </form>
+          </mat-card>
+        </div>
+        <div style="width:40%;">
+          <mat-card fxFlex="50">
+            <mat-toolbar>Depósito</mat-toolbar>
+            <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup"
+              (ngSubmit)="sendData()">
+              <mat-form-field appearance="fill">
+                <mat-label>Conta</mat-label>
+                <input matInput placeholder="Digite a conta que irá receber o depósito." formControlName="account">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Digite o valor a ser depositado" formControlName="balance">
+              </mat-form-field>
+              <button mat-raised-button type="submit">Depositar</button>
+            </form>
+          </mat-card>
+        </div>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -16,7 +16,20 @@ export class AuthServiceService {
 
   login(data): Observable<any>{
     console.log("I am server, man")
-    return this.http.post(`${baseUrl}/login`,data, this.httpOptions);
+    return this.http.post(`${baseUrl}/login`, data, this.httpOptions);
   }
 
+  deposit(data): Observable<any>{
+    let dados = {
+      account: data.account,
+      balance: parseFloat(data.balance)
+    }
+    let dataS = JSON.stringify(dados);
+    console.log(dataS)
+    return this.http.post(`${baseUrl}/dashboard/deposit`, dataS, this.httpOptions);
+  }
+
+  withdraw(id,data): Observable<any>{
+    return this.http.post(`${baseUrl}/dashboard/withdraw/${id}`, data, this.httpOptions);
+  }
 }

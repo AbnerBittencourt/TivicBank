@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(){
     this.initForm();
   }
+
   initForm(){
     this.formGroup = new FormGroup({
       cpf: new FormControl('', [Validators.required]),
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(
         (response) => {
+          let responseData = JSON.stringify(response);
+          localStorage.setItem("dados", responseData);
           this.router.navigate(['dashboard', response.user.id]);
         },
         () => {
